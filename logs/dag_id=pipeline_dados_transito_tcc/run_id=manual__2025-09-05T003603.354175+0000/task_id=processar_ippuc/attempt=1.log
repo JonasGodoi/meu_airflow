@@ -1,0 +1,75 @@
+[2025-09-05T00:36:05.120+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-05T00:36:05.162+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_ippuc manual__2025-09-05T00:36:03.354175+00:00 [queued]>
+[2025-09-05T00:36:05.175+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_ippuc manual__2025-09-05T00:36:03.354175+00:00 [queued]>
+[2025-09-05T00:36:05.176+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-05T00:36:05.197+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): processar_ippuc> on 2025-09-05 00:36:03.354175+00:00
+[2025-09-05T00:36:05.206+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=69) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-09-05T00:36:05.209+0000] {standard_task_runner.py:63} INFO - Started process 70 to run task
+[2025-09-05T00:36:05.209+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'pipeline_dados_transito_tcc', 'processar_ippuc', 'manual__2025-09-05T00:36:03.354175+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/tcc_pipeline_dag.py', '--cfg-path', '/tmp/tmphd5wwk76']
+[2025-09-05T00:36:05.211+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask processar_ippuc
+[2025-09-05T00:36:05.315+0000] {task_command.py:426} INFO - Running <TaskInstance: pipeline_dados_transito_tcc.processar_ippuc manual__2025-09-05T00:36:03.354175+00:00 [running]> on host d1b80423aee1
+[2025-09-05T00:36:05.454+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_dados_transito_tcc' AIRFLOW_CTX_TASK_ID='processar_ippuc' AIRFLOW_CTX_EXECUTION_DATE='2025-09-05T00:36:03.354175+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-05T00:36:03.354175+00:00'
+[2025-09-05T00:36:05.458+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-05T00:36:05.491+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-05T00:36:05.493+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'pip install pandas geopandas sqlalchemy mysql-connector-python && python /opt/***/pipelines/ippuc.py']
+[2025-09-05T00:36:05.505+0000] {subprocess.py:86} INFO - Output:
+[2025-09-05T00:36:08.237+0000] {subprocess.py:93} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.12/site-packages (2.1.4)
+[2025-09-05T00:36:08.239+0000] {subprocess.py:93} INFO - Requirement already satisfied: geopandas in /home/***/.local/lib/python3.12/site-packages (1.1.1)
+[2025-09-05T00:36:08.241+0000] {subprocess.py:93} INFO - Requirement already satisfied: sqlalchemy in /home/***/.local/lib/python3.12/site-packages (1.4.52)
+[2025-09-05T00:36:08.243+0000] {subprocess.py:93} INFO - Requirement already satisfied: mysql-connector-python in /home/***/.local/lib/python3.12/site-packages (8.4.0)
+[2025-09-05T00:36:08.371+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy<2,>=1.26.0 in /home/***/.local/lib/python3.12/site-packages (from pandas) (1.26.4)
+[2025-09-05T00:36:08.373+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil>=2.8.2 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+[2025-09-05T00:36:08.376+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz>=2020.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T00:36:08.378+0000] {subprocess.py:93} INFO - Requirement already satisfied: tzdata>=2022.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T00:36:08.414+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyogrio>=0.7.2 in /home/***/.local/lib/python3.12/site-packages (from geopandas) (0.11.1)
+[2025-09-05T00:36:08.416+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.12/site-packages (from geopandas) (24.0)
+[2025-09-05T00:36:08.422+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyproj>=3.5.0 in /home/***/.local/lib/python3.12/site-packages (from geopandas) (3.7.2)
+[2025-09-05T00:36:08.425+0000] {subprocess.py:93} INFO - Requirement already satisfied: shapely>=2.0.0 in /home/***/.local/lib/python3.12/site-packages (from geopandas) (2.0.4)
+[2025-09-05T00:36:08.503+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.12/site-packages (from sqlalchemy) (3.0.3)
+[2025-09-05T00:36:08.545+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi in /home/***/.local/lib/python3.12/site-packages (from pyogrio>=0.7.2->geopandas) (2024.6.2)
+[2025-09-05T00:36:08.561+0000] {subprocess.py:93} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+[2025-09-05T00:36:13.177+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:13.179+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 24.0 -> 25.2
+[2025-09-05T00:36:13.180+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2025-09-05T00:36:16.959+0000] {subprocess.py:93} INFO - /opt/***/pipelines/ippuc.py:77: UserWarning: Geometry column does not contain geometry.
+[2025-09-05T00:36:16.959+0000] {subprocess.py:93} INFO -   gdf_transformado['geometry'] = gdf_transformado['geometry'].apply(lambda geom: geom.wkt)
+[2025-09-05T00:36:18.250+0000] {subprocess.py:93} INFO - Arquivo 'SIST_VIARIO_CLASSIFICADO.shp' lido com sucesso!
+[2025-09-05T00:36:18.251+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:18.252+0000] {subprocess.py:93} INFO - --- Iniciando transformação dos dados geográficos ---
+[2025-09-05T00:36:18.253+0000] {subprocess.py:93} INFO - Sistema de Coordenadas (CRS) do arquivo: EPSG:31982
+[2025-09-05T00:36:18.255+0000] {subprocess.py:93} INFO - AVISO: O CRS não é SIRGAS 2000 (EPSG:4674). Considerando reprojetar se necessário.
+[2025-09-05T00:36:18.257+0000] {subprocess.py:93} INFO - Coluna de geometria convertida para WKT.
+[2025-09-05T00:36:18.258+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:18.259+0000] {subprocess.py:93} INFO - --- Informações do DataFrame Final ---
+[2025-09-05T00:36:18.260+0000] {subprocess.py:93} INFO - <class 'geopandas.geodataframe.GeoDataFrame'>
+[2025-09-05T00:36:18.261+0000] {subprocess.py:93} INFO - RangeIndex: 1240 entries, 0 to 1239
+[2025-09-05T00:36:18.262+0000] {subprocess.py:93} INFO - Data columns (total 4 columns):
+[2025-09-05T00:36:18.263+0000] {subprocess.py:93} INFO -  #   Column          Non-Null Count  Dtype
+[2025-09-05T00:36:18.264+0000] {subprocess.py:93} INFO - ---  ------          --------------  -----
+[2025-09-05T00:36:18.266+0000] {subprocess.py:93} INFO -  0   nome_via        1227 non-null   object
+[2025-09-05T00:36:18.266+0000] {subprocess.py:93} INFO -  1   sistema_viario  1240 non-null   object
+[2025-09-05T00:36:18.269+0000] {subprocess.py:93} INFO -  2   hierarquia_via  1240 non-null   object
+[2025-09-05T00:36:18.270+0000] {subprocess.py:93} INFO -  3   geometry        1240 non-null   object
+[2025-09-05T00:36:18.271+0000] {subprocess.py:93} INFO - dtypes: object(4)
+[2025-09-05T00:36:18.272+0000] {subprocess.py:93} INFO - memory usage: 38.9+ KB
+[2025-09-05T00:36:18.273+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:18.274+0000] {subprocess.py:93} INFO - --- Amostra dos Dados Finais ---
+[2025-09-05T00:36:18.275+0000] {subprocess.py:93} INFO -                          nome_via  ...                                           geometry
+[2025-09-05T00:36:18.277+0000] {subprocess.py:93} INFO - 0           AV. DEP. ANÍBAL KHURY  ...  LINESTRING (667105.4689624524 7176848.24257607...
+[2025-09-05T00:36:18.278+0000] {subprocess.py:93} INFO - 1  AV. DR. DÁRIO LOPES DOS SANTOS  ...  LINESTRING (676112.7808381153 7185600.62515346...
+[2025-09-05T00:36:18.279+0000] {subprocess.py:93} INFO - 2         ESTR. DO GANCHINHO - LE  ...  LINESTRING (671993.0784470992 7173343.69351395...
+[2025-09-05T00:36:18.280+0000] {subprocess.py:93} INFO - 3             R. ALBERTO FERREIRA  ...  LINESTRING (666271.3676999743 7178570.72317466...
+[2025-09-05T00:36:18.281+0000] {subprocess.py:93} INFO - 4                 R. AMADOR BUENO  ...  LINESTRING (680950.0799579098 7182250.71645224...
+[2025-09-05T00:36:18.284+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:18.285+0000] {subprocess.py:93} INFO - [5 rows x 4 columns]
+[2025-09-05T00:36:18.285+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:18.286+0000] {subprocess.py:93} INFO - --- Iniciando carregamento para a tabela 'sistema_viario' no MySQL ---
+[2025-09-05T00:36:18.287+0000] {subprocess.py:93} INFO - Carga de 1240 linhas para a tabela 'sistema_viario' concluída com sucesso!
+[2025-09-05T00:36:18.437+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-05T00:36:18.441+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-05T00:36:18.501+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=pipeline_dados_transito_tcc, task_id=processar_ippuc, run_id=manual__2025-09-05T00:36:03.354175+00:00, execution_date=20250905T003603, start_date=20250905T003605, end_date=20250905T003618
+[2025-09-05T00:36:18.547+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-09-05T00:36:18.572+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-05T00:36:18.575+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

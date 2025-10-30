@@ -1,0 +1,68 @@
+[2025-09-05T20:11:15.336+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-05T20:11:15.358+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T20:11:13.735953+00:00 [queued]>
+[2025-09-05T20:11:15.367+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T20:11:13.735953+00:00 [queued]>
+[2025-09-05T20:11:15.368+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-05T20:11:15.379+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): processar_sigesguarda> on 2025-09-05 20:11:13.735953+00:00
+[2025-09-05T20:11:15.384+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=255) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-09-05T20:11:15.388+0000] {standard_task_runner.py:63} INFO - Started process 256 to run task
+[2025-09-05T20:11:15.387+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'pipeline_dados_transito_tcc', 'processar_sigesguarda', 'manual__2025-09-05T20:11:13.735953+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/tcc_pipeline_dag.py', '--cfg-path', '/tmp/tmptp_bplk2']
+[2025-09-05T20:11:15.389+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask processar_sigesguarda
+[2025-09-05T20:11:15.468+0000] {task_command.py:426} INFO - Running <TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T20:11:13.735953+00:00 [running]> on host 6739f19e6c49
+[2025-09-05T20:11:15.557+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_dados_transito_tcc' AIRFLOW_CTX_TASK_ID='processar_sigesguarda' AIRFLOW_CTX_EXECUTION_DATE='2025-09-05T20:11:13.735953+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-05T20:11:13.735953+00:00'
+[2025-09-05T20:11:15.558+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-05T20:11:15.572+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-05T20:11:15.573+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'pip install pandas sqlalchemy mysql-connector-python && python /opt/***/pipelines/sigesguarda.py']
+[2025-09-05T20:11:15.581+0000] {subprocess.py:86} INFO - Output:
+[2025-09-05T20:11:16.548+0000] {subprocess.py:93} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.12/site-packages (2.1.4)
+[2025-09-05T20:11:16.550+0000] {subprocess.py:93} INFO - Requirement already satisfied: sqlalchemy in /home/***/.local/lib/python3.12/site-packages (1.4.52)
+[2025-09-05T20:11:16.550+0000] {subprocess.py:93} INFO - Requirement already satisfied: mysql-connector-python in /home/***/.local/lib/python3.12/site-packages (8.4.0)
+[2025-09-05T20:11:16.610+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy<2,>=1.26.0 in /home/***/.local/lib/python3.12/site-packages (from pandas) (1.26.4)
+[2025-09-05T20:11:16.611+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil>=2.8.2 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+[2025-09-05T20:11:16.613+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz>=2020.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T20:11:16.613+0000] {subprocess.py:93} INFO - Requirement already satisfied: tzdata>=2022.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T20:11:16.646+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.12/site-packages (from sqlalchemy) (3.0.3)
+[2025-09-05T20:11:16.660+0000] {subprocess.py:93} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+[2025-09-05T20:11:18.458+0000] {subprocess.py:93} INFO - 
+[2025-09-05T20:11:18.458+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 24.0 -> 25.2
+[2025-09-05T20:11:18.459+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2025-09-05T20:11:28.157+0000] {subprocess.py:93} INFO - Arquivo '2025-06-25_sigesguarda_-_Base_de_Dados.csv' lido com sucesso!
+[2025-09-05T20:11:28.158+0000] {subprocess.py:93} INFO - 
+[2025-09-05T20:11:28.159+0000] {subprocess.py:93} INFO - --- Iniciando transformação de Data e Hora ---
+[2025-09-05T20:11:28.160+0000] {subprocess.py:93} INFO - Transformação de data e hora concluída.
+[2025-09-05T20:11:28.160+0000] {subprocess.py:93} INFO - 
+[2025-09-05T20:11:28.161+0000] {subprocess.py:93} INFO - --- Informações do DataFrame Final ---
+[2025-09-05T20:11:28.162+0000] {subprocess.py:93} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-09-05T20:11:28.162+0000] {subprocess.py:93} INFO - RangeIndex: 122457 entries, 0 to 122456
+[2025-09-05T20:11:28.163+0000] {subprocess.py:93} INFO - Data columns (total 17 columns):
+[2025-09-05T20:11:28.164+0000] {subprocess.py:93} INFO -  #   Column                    Non-Null Count   Dtype
+[2025-09-05T20:11:28.165+0000] {subprocess.py:93} INFO - ---  ------                    --------------   -----
+[2025-09-05T20:11:28.165+0000] {subprocess.py:93} INFO -  0   OCORRENCIA_TIMESTAMP      122457 non-null  datetime64[ns]
+[2025-09-05T20:11:28.166+0000] {subprocess.py:93} INFO -  1   ANO                       122457 non-null  Int64
+[2025-09-05T20:11:28.167+0000] {subprocess.py:93} INFO -  2   MES                       122457 non-null  Int64
+[2025-09-05T20:11:28.167+0000] {subprocess.py:93} INFO -  3   DIA                       122457 non-null  Int64
+[2025-09-05T20:11:28.168+0000] {subprocess.py:93} INFO -  4   HORA                      122457 non-null  Int64
+[2025-09-05T20:11:28.168+0000] {subprocess.py:93} INFO -  5   MINUTO                    122457 non-null  Int64
+[2025-09-05T20:11:28.169+0000] {subprocess.py:93} INFO -  6   NOME_DIA_SEMANA           122457 non-null  object
+[2025-09-05T20:11:28.170+0000] {subprocess.py:93} INFO -  7   DIA_DA_SEMANA_NUM         122457 non-null  Int64
+[2025-09-05T20:11:28.171+0000] {subprocess.py:93} INFO -  8   ATENDIMENTO_BAIRRO_NOME   122372 non-null  object
+[2025-09-05T20:11:28.171+0000] {subprocess.py:93} INFO -  9   LOGRADOURO_NOME           119270 non-null  object
+[2025-09-05T20:11:28.171+0000] {subprocess.py:93} INFO -  10  REGIONAL_FATO_NOME        122292 non-null  object
+[2025-09-05T20:11:28.172+0000] {subprocess.py:93} INFO -  11  NATUREZA1_DESCRICAO       122431 non-null  object
+[2025-09-05T20:11:28.173+0000] {subprocess.py:93} INFO -  12  SUBCATEGORIA1_DESCRICAO   103896 non-null  object
+[2025-09-05T20:11:28.173+0000] {subprocess.py:93} INFO -  13  EQUIPAMENTO_URBANO_NOME   14827 non-null   object
+[2025-09-05T20:11:28.174+0000] {subprocess.py:93} INFO -  14  ORIGEM_CHAMADO_DESCRICAO  122457 non-null  object
+[2025-09-05T20:11:28.175+0000] {subprocess.py:93} INFO -  15  OCORRENCIA_CODIGO         122166 non-null  object
+[2025-09-05T20:11:28.176+0000] {subprocess.py:93} INFO -  16  NUMERO_PROTOCOLO_156      1071 non-null    float64
+[2025-09-05T20:11:28.178+0000] {subprocess.py:93} INFO - dtypes: Int64(6), datetime64[ns](1), float64(1), object(9)
+[2025-09-05T20:11:28.179+0000] {subprocess.py:93} INFO - memory usage: 16.6+ MB
+[2025-09-05T20:11:28.180+0000] {subprocess.py:93} INFO - 
+[2025-09-05T20:11:28.180+0000] {subprocess.py:93} INFO - --- Iniciando carregamento para a tabela 'ocorrencias' no MySQL ---
+[2025-09-05T20:11:28.181+0000] {subprocess.py:93} INFO - Carga de 122457 linhas para a tabela 'ocorrencias' concluída com sucesso!
+[2025-09-05T20:11:28.400+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-05T20:11:28.402+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-05T20:11:28.439+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=pipeline_dados_transito_tcc, task_id=processar_sigesguarda, run_id=manual__2025-09-05T20:11:13.735953+00:00, execution_date=20250905T201113, start_date=20250905T201115, end_date=20250905T201128
+[2025-09-05T20:11:28.498+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-09-05T20:11:28.517+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-05T20:11:28.519+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

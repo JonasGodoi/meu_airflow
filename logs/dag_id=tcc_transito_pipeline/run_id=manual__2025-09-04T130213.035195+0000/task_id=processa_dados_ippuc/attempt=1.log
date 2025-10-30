@@ -1,0 +1,42 @@
+[2025-09-04T13:02:14.599+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-04T13:02:14.632+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tcc_transito_pipeline.processa_dados_ippuc manual__2025-09-04T13:02:13.035195+00:00 [queued]>
+[2025-09-04T13:02:14.643+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tcc_transito_pipeline.processa_dados_ippuc manual__2025-09-04T13:02:13.035195+00:00 [queued]>
+[2025-09-04T13:02:14.645+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-04T13:02:14.663+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): processa_dados_ippuc> on 2025-09-04 13:02:13.035195+00:00
+[2025-09-04T13:02:14.670+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-09-04T13:02:14.672+0000] {standard_task_runner.py:63} INFO - Started process 78 to run task
+[2025-09-04T13:02:14.672+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tcc_transito_pipeline', 'processa_dados_ippuc', 'manual__2025-09-04T13:02:13.035195+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/tcc_pipeline_dag.py', '--cfg-path', '/tmp/tmpr8vzos2p']
+[2025-09-04T13:02:14.674+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask processa_dados_ippuc
+[2025-09-04T13:02:14.755+0000] {task_command.py:426} INFO - Running <TaskInstance: tcc_transito_pipeline.processa_dados_ippuc manual__2025-09-04T13:02:13.035195+00:00 [running]> on host f5809a4c1f5a
+[2025-09-04T13:02:14.907+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='tcc_transito_pipeline' AIRFLOW_CTX_TASK_ID='processa_dados_ippuc' AIRFLOW_CTX_EXECUTION_DATE='2025-09-04T13:02:13.035195+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-04T13:02:13.035195+00:00'
+[2025-09-04T13:02:14.909+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-04T13:02:14.959+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-04T13:02:14.961+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/pipelines/ippuc.py']
+[2025-09-04T13:02:14.970+0000] {subprocess.py:86} INFO - Output:
+[2025-09-04T13:02:17.062+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-09-04T13:02:17.063+0000] {subprocess.py:93} INFO -   File "/opt/***/pipelines/ippuc.py", line 2, in <module>
+[2025-09-04T13:02:17.065+0000] {subprocess.py:93} INFO -     import geopandas as gpd
+[2025-09-04T13:02:17.066+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'geopandas'
+[2025-09-04T13:02:17.137+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-09-04T13:02:17.139+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-04T13:02:17.150+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-09-04T13:02:17.155+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=tcc_transito_pipeline, task_id=processa_dados_ippuc, run_id=manual__2025-09-04T13:02:13.035195+00:00, execution_date=20250904T130213, start_date=20250904T130214, end_date=20250904T130217
+[2025-09-04T13:02:17.169+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 15 for task processa_dados_ippuc (Bash command failed. The command returned a non-zero exit code 1.; 78)
+[2025-09-04T13:02:17.219+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-09-04T13:02:17.250+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-04T13:02:17.253+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,84 @@
+[2025-09-05T00:36:05.123+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-05T00:36:05.163+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T00:36:03.354175+00:00 [queued]>
+[2025-09-05T00:36:05.177+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T00:36:03.354175+00:00 [queued]>
+[2025-09-05T00:36:05.179+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-05T00:36:05.200+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): processar_sigesguarda> on 2025-09-05 00:36:03.354175+00:00
+[2025-09-05T00:36:05.210+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=68) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-09-05T00:36:05.213+0000] {standard_task_runner.py:63} INFO - Started process 71 to run task
+[2025-09-05T00:36:05.213+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'pipeline_dados_transito_tcc', 'processar_sigesguarda', 'manual__2025-09-05T00:36:03.354175+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/tcc_pipeline_dag.py', '--cfg-path', '/tmp/tmpnkdbjq8_']
+[2025-09-05T00:36:05.216+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask processar_sigesguarda
+[2025-09-05T00:36:05.323+0000] {task_command.py:426} INFO - Running <TaskInstance: pipeline_dados_transito_tcc.processar_sigesguarda manual__2025-09-05T00:36:03.354175+00:00 [running]> on host d1b80423aee1
+[2025-09-05T00:36:05.460+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pipeline_dados_transito_tcc' AIRFLOW_CTX_TASK_ID='processar_sigesguarda' AIRFLOW_CTX_EXECUTION_DATE='2025-09-05T00:36:03.354175+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-05T00:36:03.354175+00:00'
+[2025-09-05T00:36:05.462+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-05T00:36:05.491+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-05T00:36:05.493+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'pip install pandas sqlalchemy mysql-connector-python && python /opt/***/pipelines/sigesguarda.py']
+[2025-09-05T00:36:05.507+0000] {subprocess.py:86} INFO - Output:
+[2025-09-05T00:36:08.241+0000] {subprocess.py:93} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.12/site-packages (2.1.4)
+[2025-09-05T00:36:08.244+0000] {subprocess.py:93} INFO - Requirement already satisfied: sqlalchemy in /home/***/.local/lib/python3.12/site-packages (1.4.52)
+[2025-09-05T00:36:08.246+0000] {subprocess.py:93} INFO - Requirement already satisfied: mysql-connector-python in /home/***/.local/lib/python3.12/site-packages (8.4.0)
+[2025-09-05T00:36:08.377+0000] {subprocess.py:93} INFO - Requirement already satisfied: numpy<2,>=1.26.0 in /home/***/.local/lib/python3.12/site-packages (from pandas) (1.26.4)
+[2025-09-05T00:36:08.379+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil>=2.8.2 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+[2025-09-05T00:36:08.382+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz>=2020.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T00:36:08.384+0000] {subprocess.py:93} INFO - Requirement already satisfied: tzdata>=2022.1 in /home/***/.local/lib/python3.12/site-packages (from pandas) (2024.1)
+[2025-09-05T00:36:08.467+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.12/site-packages (from sqlalchemy) (3.0.3)
+[2025-09-05T00:36:08.502+0000] {subprocess.py:93} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+[2025-09-05T00:36:13.149+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:13.166+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 24.0 -> 25.2
+[2025-09-05T00:36:13.169+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2025-09-05T00:36:19.246+0000] {subprocess.py:93} INFO - Arquivo '2025-06-25_sigesguarda_-_Base_de_Dados.csv' lido com sucesso!
+[2025-09-05T00:36:19.249+0000] {subprocess.py:93} INFO - 
+[2025-09-05T00:36:19.250+0000] {subprocess.py:93} INFO - --- Iniciando transformação de Data e Hora ---
+[2025-09-05T00:36:19.251+0000] {subprocess.py:93} INFO - Valores NaT (inválidos) em OCORRENCIA_TIMESTAMP: 0
+[2025-09-05T00:36:19.252+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-09-05T00:36:19.253+0000] {subprocess.py:93} INFO -   File "/opt/***/pipelines/sigesguarda.py", line 154, in <module>
+[2025-09-05T00:36:19.255+0000] {subprocess.py:93} INFO -     df_final = transformar_dados_sigesguarda(df_bruto)
+[2025-09-05T00:36:19.256+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.257+0000] {subprocess.py:93} INFO -   File "/opt/***/pipelines/sigesguarda.py", line 70, in transformar_dados_sigesguarda
+[2025-09-05T00:36:19.260+0000] {subprocess.py:93} INFO -     df_transformado['NOME_DIA_SEMANA'] = df_transformado['OCORRENCIA_TIMESTAMP'].dt.day_name(locale='pt_BR.UTF-8')
+[2025-09-05T00:36:19.260+0000] {subprocess.py:93} INFO -                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.261+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/core/accessor.py", line 112, in f
+[2025-09-05T00:36:19.262+0000] {subprocess.py:93} INFO -     return self._delegate_method(name, *args, **kwargs)
+[2025-09-05T00:36:19.264+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.265+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/accessors.py", line 134, in _delegate_method
+[2025-09-05T00:36:19.266+0000] {subprocess.py:93} INFO -     result = method(*args, **kwargs)
+[2025-09-05T00:36:19.267+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.268+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/extension.py", line 95, in method
+[2025-09-05T00:36:19.269+0000] {subprocess.py:93} INFO -     result = attr(self._data, *args, **kwargs)
+[2025-09-05T00:36:19.270+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.272+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py", line 1337, in day_name
+[2025-09-05T00:36:19.273+0000] {subprocess.py:93} INFO -     result = fields.get_date_name_field(
+[2025-09-05T00:36:19.274+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.275+0000] {subprocess.py:93} INFO -   File "fields.pyx", line 165, in pandas._libs.tslibs.fields.get_date_name_field
+[2025-09-05T00:36:19.276+0000] {subprocess.py:93} INFO -   File "fields.pyx", line 644, in pandas._libs.tslibs.fields._get_locale_names
+[2025-09-05T00:36:19.277+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+[2025-09-05T00:36:19.279+0000] {subprocess.py:93} INFO -     return next(self.gen)
+[2025-09-05T00:36:19.280+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.281+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pandas/_config/localization.py", line 47, in set_locale
+[2025-09-05T00:36:19.282+0000] {subprocess.py:93} INFO -     locale.setlocale(lc_var, new_locale)
+[2025-09-05T00:36:19.282+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/locale.py", line 615, in setlocale
+[2025-09-05T00:36:19.283+0000] {subprocess.py:93} INFO -     return _setlocale(category, locale)
+[2025-09-05T00:36:19.284+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-09-05T00:36:19.285+0000] {subprocess.py:93} INFO - locale.Error: unsupported locale setting
+[2025-09-05T00:36:19.472+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-09-05T00:36:19.473+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-05T00:36:19.483+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-09-05T00:36:19.489+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=pipeline_dados_transito_tcc, task_id=processar_sigesguarda, run_id=manual__2025-09-05T00:36:03.354175+00:00, execution_date=20250905T003603, start_date=20250905T003605, end_date=20250905T003619
+[2025-09-05T00:36:19.514+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 8 for task processar_sigesguarda (Bash command failed. The command returned a non-zero exit code 1.; 71)
+[2025-09-05T00:36:19.563+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-09-05T00:36:19.579+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-05T00:36:19.581+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
